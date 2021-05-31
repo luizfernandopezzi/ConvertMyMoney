@@ -1,0 +1,46 @@
+<%- include('header') %>
+
+<form id="selectForm" action="/exchanging" method="GET">
+    <select class="options" name="currencyExchange">
+            <option value="selectCurrency">Select Currency</option>
+            <option value="brlusd">BRL to USD</option>
+            <option value="usdbrl">UDS to BRL</option>
+    </select>
+
+    <div>
+      <button type="submit">Start</button>
+    </div>
+</form>
+
+<% if(currencyExchange === 'brlusd') { %>
+  <form class="exchangeForm" method="GET" action="/exchange">
+    <div>
+        <label>Exchange Rate</label>
+        <input name="exchangeRate" type="number" placeholder="BRL/USD" value="<%= exchangeRateValue %>">
+    </div>   
+    <div>
+        <label>Amount</label>
+        <input name="amount" type="number" placeholder="R$ 0,00">
+    </div>
+    
+    <div class="button">
+        <button type="submit" name="currencyExchange" value="brlusd">Convert</button>
+    </div>
+</form>
+<% } else if(currencyExchange === 'usdbrl') { %>
+  <form class="exchangeForm" method="GET" action="/exchange">
+    <div>
+        <label>Exchange Rate</label>
+        <input name="exchangeRate" type="number" placeholder="BRL/USD" value="<%= exchangeRateValue %>">
+    </div>   
+    <div>
+        <label>Amount</label>
+        <input name="amount" type="number" placeholder="USD 0.00">
+    </div>
+    <div class="button">
+        <button type="submit" name="currencyExchange" value="usdbrl">Convert</button>
+    </div>
+</form>
+<% } %>
+
+<%- include('footer') %>
