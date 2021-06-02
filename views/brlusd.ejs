@@ -3,11 +3,11 @@
 <form method="GET" action="/exchange">
     <div>
         <label>Exchange Rate</label>
-        <input name="exchangeRate" type="number" placeholder="BRL/USD" value="<%= exchangeRateValue %>">
+        <input name="exchangeRate" type="number" step="any" inputmode="numeric" placeholder="BRL/USD" value="<%= exchangeRateValue %>">
     </div>   
     <div>
         <label>Amount</label>
-        <input name="amount" type="number" placeholder="R$ 0,00">
+        <input name="amount" type="number" step="any" inputmode="numeric" placeholder="R$ 0,00">
     </div>
     
     <div class="button">
