@@ -15,7 +15,8 @@ app.get('/', (req,res)=>{
 })
 
 app.get('/exchanging', async (req,res)=>{
-    const exchangeRateValue = await api.getExchangeRate()  
+    //const exchangeRateValue = await api.getExchangeRate()  
+    const exchangeRateValue = ''
     const { currencyExchange } = req.query
     if(currencyExchange === 'selectCurrency'){
         res.render('homeEJS')
